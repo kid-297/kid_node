@@ -1,0 +1,2 @@
+# KidNode
+Daily learning
