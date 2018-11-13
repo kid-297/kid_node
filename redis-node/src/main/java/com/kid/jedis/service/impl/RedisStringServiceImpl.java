@@ -1,13 +1,20 @@
 package com.kid.jedis.service.impl;
 
 import com.kid.jedis.service.RedisStringService;
+import com.kid.jedis.util.RedisConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
+
+/**
+ * <b>关于Redis String 类型的一些简单的增删改查</b>
+ * <p>该类里尝试两种jedis返回连接池方法：</p>
+ * <p>1. jedis.close(); 详细使用方法看set()方法</p>
+ * <p>2. 在try()，括号里添加<br>try (Jedis jedis = jedisPool.getResource())，<br>详细使用方法看del()方法。需要jdk1.7+支持</p>
+ */
 @Component
 @Slf4j
 public class RedisStringServiceImpl implements RedisStringService {
@@ -25,10 +32,7 @@ public class RedisStringServiceImpl implements RedisStringService {
         } catch (Exception e){
             e.printStackTrace();
         }finally {
-            //返还到连接池
-            if (jedis != null) {
-                jedis.close();
-            }
+            if (jedis != null) jedis.close();
         }
         log.info("【redis{}数据】类型：{}；key:{}；value:{}","插入","String",key,value);
         return flag;
@@ -47,10 +51,7 @@ public class RedisStringServiceImpl implements RedisStringService {
         } catch (Exception e){
             e.printStackTrace();
         }finally {
-            //返还到连接池
-            if (jedis != null) {
-                jedis.close();
-            }
+            if (jedis != null) jedis.close();
         }
         log.info("【redis{}数据】类型：{}；key:{}；value:{}","插入","String",key,value);
         return flag;
@@ -59,16 +60,12 @@ public class RedisStringServiceImpl implements RedisStringService {
     @Override
     public boolean del(String key) throws Exception {
         boolean flag = false;
-        Jedis jedis = null;
-        try {
-            jedis = jedisPool.getResource();
+        try (Jedis jedis = jedisPool.getResource()){
             flag = jedis.del(key).equals("OK")?true:false;
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            if (jedis != null)
-                jedis.close();
         }
+        log.info("【redis{}数据】类型：{}；key:{}","删除","String",key);
         return flag;
     }
 
@@ -82,9 +79,9 @@ public class RedisStringServiceImpl implements RedisStringService {
         }catch (Exception e){
             e.printStackTrace();
         }finally {
-            if (jedis!=null)
-                jedis.close();
+            if(jedis != null) jedis.close();
         }
         return value;
     }
+
 }
