@@ -87,4 +87,35 @@ public class RedisStringServiceImpl implements RedisStringService {
         }
         return value;
     }
+
+    @Override
+    public boolean append(String key, String value) throws Exception {
+        try (Jedis jedis = jedisPool.getResource()){
+            jedis.append(key,value);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean setbit(String key, long offset, boolean value) {
+        try(Jedis jedis = jedisPool.getResource()){
+            return jedis.setbit(key,offset,value);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public Long bitcount(String key) throws Exception {
+        try(Jedis jedis = jedisPool.getResource()){
+            return jedis.bitcount(key);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

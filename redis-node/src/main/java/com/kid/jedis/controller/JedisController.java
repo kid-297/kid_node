@@ -15,10 +15,10 @@ public class JedisController {
 
     @ResponseBody
     @RequestMapping(value = "name")
-    public boolean name() {
+    public boolean name(String name) {
         boolean flag = false;
         try {
-            flag = redisStringService.set("name","领导");
+            flag = redisStringService.set("name",name);
         } catch (Exception e) {
             e.printStackTrace();
         }
