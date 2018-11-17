@@ -4,6 +4,7 @@ import com.kid.jedis.service.RedisStringService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
@@ -14,7 +15,7 @@ import redis.clients.jedis.JedisPool;
  * <p>1. jedis.close(); 详细使用方法看set()方法</p>
  * <p>2. 在try()，括号里添加<br>try (Jedis jedis = jedisPool.getResource())，<br>详细使用方法看del()方法。需要jdk1.7+支持</p>
  */
-@Component
+@Service
 @Slf4j
 public class RedisStringServiceImpl implements RedisStringService {
 
