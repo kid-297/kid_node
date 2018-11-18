@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+
+    <display-name> kid SpringMVC node</display-name>
+
+    <servlet>
+        <servlet-name>kidmvc</servlet-name>
+        <servlet-class>com.kid297.mvcframework.servlet.KidDispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>application.properties</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>kidmvc</servlet-name>
+        <!--用一个servlet拦截所有的请求-->
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
