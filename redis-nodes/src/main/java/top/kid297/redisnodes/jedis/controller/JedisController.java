@@ -1,11 +1,11 @@
-package com.kid.jedis.controller;
+package top.kid297.redisnodes.jedis.controller;
 
-import com.kid.jedis.service.RedisStringService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import top.kid297.redisnodes.jedis.service.RedisStringService;
 
 @RestController
 @Slf4j
