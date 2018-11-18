@@ -3,6 +3,9 @@ package top.kid297.redisnodes.jedis.service;
 
 import java.util.List;
 
+/**
+ * about jedis String  demo
+ */
 public interface RedisStringService {
 
     /**
