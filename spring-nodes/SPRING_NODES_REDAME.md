@@ -15,3 +15,9 @@
     - 从HandlerMapping去匹配 -->  找得Method、通过反射invoker,再次返回的结果交给
     - invoker 
     - response.getWrite()
+    
+# 项目介绍
+- 该项目搭建为maven项目，整合tomcat，用为项目启动。
+- 其中demo包下为普通service层和Controller层代码
+- mvcframework 为自己配置的注解类和启动servlet类。
+- 项目采用annotation+web.xml+servlet方式，，用不到400行代码来描述SpringIOC、DI、MVC的精华设计思想，并保证基本功能完整。
