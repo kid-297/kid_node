@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>kidmvc</servlet-name>
-        <servlet-class>com.kid297.mvcframework.servlet.KidDispatcherServlet</servlet-class>
+        <servlet-class>com.kid297.springnodes.mvcframework.servlet.KidDispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>application.properties</param-value>
