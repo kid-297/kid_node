@@ -61,3 +61,6 @@
     - minEvictableIdleTimeMills=60000
     - timeBetweenEvictionRunsMillis=30000
     - numTestsPerEvictionRun=-1
+    
+ # 分布式之redis复习精讲
+ [分布式之redis复习精讲](https://www.cnblogs.com/rjzheng/p/9096228.html)
