@@ -1,4 +1,4 @@
-package top.kid297.redisnodes.jedis.util;
+package top.kid297.redisnodes.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
