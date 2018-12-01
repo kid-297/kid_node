@@ -1,4 +1,4 @@
-package com.kid297.springnodes.demo.service;
+package top.kid297.springnodes.demo.service;
 
 public interface DemoServcie {
 

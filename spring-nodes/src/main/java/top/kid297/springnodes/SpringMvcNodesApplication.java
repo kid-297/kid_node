@@ -1,4 +1,4 @@
-package com.kid297.springnodes;
+package top.kid297.springnodes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

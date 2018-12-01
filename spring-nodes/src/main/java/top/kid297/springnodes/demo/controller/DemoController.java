@@ -1,10 +1,10 @@
-package com.kid297.springnodes.demo.controller;
+package top.kid297.springnodes.demo.controller;
 
-import com.kid297.springnodes.demo.service.DemoServcie;
-import com.kid297.springnodes.mvcframework.annotation.KidAutowired;
-import com.kid297.springnodes.mvcframework.annotation.KidController;
-import com.kid297.springnodes.mvcframework.annotation.KidRequestMapping;
-import com.kid297.springnodes.mvcframework.annotation.KidRequestParam;
+import top.kid297.springnodes.demo.service.DemoServcie;
+import top.kid297.springnodes.mvcframework.annotation.KidAutowired;
+import top.kid297.springnodes.mvcframework.annotation.KidController;
+import top.kid297.springnodes.mvcframework.annotation.KidRequestMapping;
+import top.kid297.springnodes.mvcframework.annotation.KidRequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

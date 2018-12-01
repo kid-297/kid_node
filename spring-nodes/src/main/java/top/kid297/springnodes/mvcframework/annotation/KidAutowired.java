@@ -1,4 +1,4 @@
-package com.kid297.springnodes.mvcframework.annotation;
+package top.kid297.springnodes.mvcframework.annotation;
 
 import java.lang.annotation.*;
 
