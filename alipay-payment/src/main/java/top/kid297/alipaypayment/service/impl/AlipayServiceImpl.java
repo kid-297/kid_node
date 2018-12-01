@@ -1,5 +1,6 @@
 package top.kid297.alipaypayment.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
@@ -60,10 +61,10 @@ public class AlipayServiceImpl implements AlipayService {
         String result = alipayClient.execute(alipayRequest).getBody();
 
         //获取到支付宝返回的查询信息  解析
-        JSONObject jsStrresult = JSONObject.fromObject(result);
+        JSONObject jsStrresult = JSONObject.parseObject(result);
         String alipay_trade_query_response= jsStrresult.getString("alipay_trade_query_response");
         //二次解析  解析嵌套的json串
-        JSONObject jsStr = JSONObject.fromObject(alipay_trade_query_response);
+        JSONObject jsStr = JSONObject.parseObject(alipay_trade_query_response);
         String codeString = jsStr.getString("code");
         String msgsString = jsStr.getString("msg");
         if(codeString.equals("10000") && msgsString.equals("Success")){
