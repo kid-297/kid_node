@@ -64,3 +64,24 @@
     
  # 分布式之redis复习精讲
  [分布式之redis复习精讲](https://www.cnblogs.com/rjzheng/p/9096228.html)
+ 
+ # 
+ 读多写少用缓存
+ 读少写多用消息队列
+ 
+ # redis经典面试题
+ 1.redis有哪些数据结构
+     - 字符串类型(String)
+     - 列表类型(list)
+     - 有序集合类型(sorted set)
+     - 散列类型(hash)
+     - 集合类型(set)
+ 2.redis如何做持久化的？
+     - RDB和AOF的方式
+        - RDB 全量 将数据全部定时存储在硬盘
+        - AOF 增量 记录命令 类似日志，将每条指令记录下来
+ 3.redis的同步机制了解么？
+ 
+ 4.redis适合的场景
+ 
+ 
